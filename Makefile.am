@@ -12,5 +12,5 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libfvad.pc
 
 # install public header file
-include_HEADERS = include/fvad.h
+include_HEADERS = include/fvad.h include/fvad_detail.h
 

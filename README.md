@@ -28,6 +28,8 @@ The API is documented in the `include/fvad.h` header file. See also
 Recommended CFLAGS to turn on warnings: `-std=c11 -Wall -Wextra -Wpedantic`.
 Tests can be run with `make check`.
 
+Note: This repos is forked repos. Additional codes have no tests.
+
 ### Origin ###
 This library largely consists of parts of the WebRTC Native Code package, the
 repository of which can be found at
