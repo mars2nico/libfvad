@@ -48,6 +48,10 @@ typedef struct VadInstT_ {
     int16_t individual[3];
     int16_t total[3];
 
+    int32_t h0_test[kNumChannels]; // represented as fixed point number : headding 5 bits is part of integer and trailing 27 bits is decimal points.
+    int32_t h1_test[kNumChannels]; // represented as fixed point number
+    int16_t kSpectrumWeight[kNumChannels];
+
     int init_flag;
 } VadInstT;
 

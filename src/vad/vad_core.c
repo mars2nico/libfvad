@@ -209,6 +209,9 @@ static int16_t GmmProbability(VadInstT* self, int16_t* features,
         h1_test += speech_probability[k];  // Q27
       }
 
+      self->h0_test[channel] = h0_test;
+      self->h1_test[channel] = h1_test;
+
       // Calculate the log likelihood ratio: log2(Pr{X|H1} / Pr{X|H1}).
       // Approximation:
       // log2(Pr{X|H1} / Pr{X|H1}) = log2(Pr{X|H1}*2^Q) - log2(Pr{X|H1}*2^Q)
@@ -595,6 +598,9 @@ int WebRtcVad_set_mode_core(VadInstT* self, int mode) {
       return_value = -1;
       break;
   }
+
+  for(int channel = 0; channel < kNumChannels; ++channel)
+    self->kSpectrumWeight[channel] = kSpectrumWeight[channel];
 
   return return_value;
 }
