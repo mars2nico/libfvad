@@ -1,10 +1,11 @@
 # libfvad: voice activity detection (VAD) library #
-[![Build Status](https://travis-ci.org/dpirch/libfvad.svg?branch=master)](https://travis-ci.org/dpirch/libfvad)
+
 
 This is a fork of the VAD engine that is part of the WebRTC Native Code package
 (https://webrtc.org/native-code/), for use as a standalone library independent
-from the rest of the WebRTC code. There are currently no changes in
-functionality.
+from the rest of the WebRTC code. There are currently following changes.
+
+- Add interfaces to get internal calculated data for external uses.
 
 ## Building and Installing ##
 libfvad uses autoconf/automake and can be build and installed with the usual:
@@ -27,8 +28,6 @@ The API is documented in the `include/fvad.h` header file. See also
 ## Development notes ##
 Recommended CFLAGS to turn on warnings: `-std=c11 -Wall -Wextra -Wpedantic`.
 Tests can be run with `make check`.
-
-Note: This repos is forked repos. Additional codes have no tests.
 
 ### Origin ###
 This library largely consists of parts of the WebRTC Native Code package, the

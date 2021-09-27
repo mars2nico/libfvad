@@ -23,10 +23,12 @@ FvadDetail *fvad_detail_get(Fvad* inst, int channel, FvadDetail *dst)
 {
     assert(inst);
     assert(dst);
-    if (kNumChannels <= channel) return NULL;
+    if (channel < 0 || kNumChannels <= channel) return NULL;
 
     dst->h0_test = inst->core.h0_test[channel];
     dst->h1_test = inst->core.h1_test[channel];
+
+    return dst;
 }
 
 int fvad_detail_get_channels(Fvad* inst)
@@ -39,7 +41,7 @@ FvadConstNumber *fvad_detail_get_const(Fvad* inst, int channel, FvadConstNumber 
 {
     assert(inst);
     assert(dst);
-    if (kNumChannels <= channel) return NULL;
+    if (channel < 0 || kNumChannels <= channel) return NULL;
 
     dst->kSpectrumWeight = inst->core.kSpectrumWeight[channel];
 

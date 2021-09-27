@@ -170,6 +170,11 @@ static int16_t GmmProbability(VadInstT* self, int16_t* features,
     totalTest = self->total[2];
   }
 
+  for (channel = 0; channel < kNumChannels; ++channel) {
+    self->h0_test[channel] = 0;
+    self->h1_test[channel] = 0;
+  }
+
   if (total_power > kMinEnergy) {
     // The signal power of current frame is large enough for processing. The
     // processing consists of two parts:

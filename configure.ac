@@ -1,4 +1,4 @@
-AC_INIT([libfvad],[1.0],[dpirch@gmail.com],[],[https://github.com/dpirch/libfvad])
+AC_INIT([libfvad],[1.0],[],[],[https://github.com/mars2nico/libfvad])
 AC_PREREQ([2.60]) # for _AC_C_STD_TRY
 AC_CONFIG_SRCDIR([src/fvad.c])
 AC_CONFIG_AUX_DIR([ac-aux])
